@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.productsContainer {
+    margin: 5rem auto;
+}
+
+.items {
+    width: 100%;
+    padding: 3rem;
+display: flex;
+flex-direction: row;
+text-align: center;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+}
+
+.items button {
+    border: none;
+    padding: 1rem;
+    color: white;
+    background-color: gray;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 10px;
+}
+
+.bottonDelCarrito {
+    padding: 1rem;
+    font-size: 2.3rem;
+    position: fixed;
+    left: 45rem;
+    bottom: 1.5rem;
+    border-radius: 100%;
+    background-color: gray;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.bottonDelCarrito:hover{
+    background-color: black;
+}
+
+.cerrarEvento {
+    cursor: pointer;
+}
+
+.evento{ 
+    display: none;
+    background-color: rgba(0, 0, 0, 0.011);
+    position: fixed;
+    top:0 ;
+    left:0 ;
+    right:0 ;
+    bottom: 0;
+    z-index: 1;
+}
+
+
+.eventoContainer {
+    display: none;
+    background-color: aliceblue;
+    box-shadow: 8px 3px 6px #00000029;
+    pad: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 100%;
+    z-index: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
