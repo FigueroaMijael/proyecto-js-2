@@ -4,13 +4,26 @@
     box-sizing: border-box;
 }
 
+.navB {
+    list-style: none;
+    margin: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    width: 15rem;
+    height: 15rem;
+}
+
 .productsContainer {
     margin: 5rem auto;
 }
 
 .items {
     width: 100%;
-    padding: 3rem;
+    padding: 10rem;
 display: flex;
 flex-direction: row;
 text-align: center;
@@ -34,8 +47,8 @@ align-items: center;
     padding: 1rem;
     font-size: 2.3rem;
     position: fixed;
-    left: 45rem;
-    bottom: 1.5rem;
+    top: 4rem;
+    left: 78rem;
     border-radius: 100%;
     background-color: gray;
     cursor: pointer;
@@ -56,7 +69,7 @@ align-items: center;
     position: fixed;
     top:0 ;
     left:0 ;
-    right:0 ;
+    right:0;
     bottom: 0;
     z-index: 1;
 }
@@ -74,7 +87,7 @@ align-items: center;
     max-width: 500px;
     width: 100%;
     z-index: 1;
-    max-height: 80vh;
+    max-height: 80px;
     overflow-y: auto;
 }
 

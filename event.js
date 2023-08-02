@@ -1,7 +1,8 @@
 // base de datos
-let products = [
+const products = [
         {
             id: 0,
+            img: `./assets/img/PS5.webp` ,
             title: `PS5`,
             precio: 400,
             stockDisp: 'Stock: 20 Uni' ,
@@ -9,6 +10,7 @@ let products = [
         },
         {
             id: 1,
+            img:  `./assets/img/notebook.jpg`,
             title: `NotebooK Lenovo`,
             precio: 200,
             stockDisp: 'Stock: 23 Uni' ,
@@ -16,6 +18,7 @@ let products = [
         },
         {
             id: 2,
+            img: `./assets/img/pc-gamer.webp`,
             title: `PcGamer`,
             precio: 350,
             stockDisp: 'Stock: 534 Uni' ,
@@ -23,6 +26,7 @@ let products = [
         },
         {
             id: 3,
+            img: `./assets/img/PS4.jpg`,
             title: `PS4`,
             precio: 250,
             stockDisp: 'Stock: 645 Uni' ,
@@ -30,6 +34,7 @@ let products = [
         },
         {
             id: 4,
+            img: `./assets/img/mouse-pad.jpeg`,
             title: `MousePad`,
             precio: 20,
             stockDisp: 'Stock: 36 Uni' ,
@@ -37,6 +42,7 @@ let products = [
         },
         {
             id: 5,
+            img:  `./assets/img/auriculares-logitech.png`,
             title: `Auricular Logitec`,
             precio: 150,
             stockDisp: 'Stock: 8 Uni' ,
@@ -44,6 +50,7 @@ let products = [
         },
         {
             id: 6,
+            img:  `./assets/img/mouse-aorus.jpg`,
             title: `Mouse Aorus`,
             precio: 100,
             stockDisp: 'Stock: 43 Uni' ,
@@ -51,46 +58,57 @@ let products = [
         },
     ]
 
-    const msjBienvenida = document.getElementById("msjBienvenida")
-
-    const nombre = prompt('Ingrese nombre')
-
-    const hola = document.createElement ("div");
-            hola.className = 'bienvenida'
-            hola.innerHTML = `
-                <h1> BIENVENIDO/A A TECNOCOM ${nombre} !! </h1>
-            `
-        msjBienvenida.append(hola)
+    
 
     const productos = []
 
     const tienda = document.getElementById ("shopItems");
-    
-    
-    products.forEach((product) => {
-        const content = document.createElement("div");
-        content.innerHTML = `
-        <h3>${product.title}</h3>
-        <h4>$${product.precio}</h4>
-        <p class="precio"> Stock: ${product.stockDisp}</p>
-        `;
-        tienda.append(content);
-    
-        const buttonCompra = document.createElement ("button");
-        buttonCompra.innerText = 'comprar';
-    
-        content.append(buttonCompra);
-    
-        buttonCompra.addEventListener("click", () => {
-            productos.push({
-            id: product.id,
-            title: product.title,
-            precio: product.precio,
-            stock: product.stock,
+
+    function mostrarProductos (arrayProd) {
+        tienda.innerHTML = ''
+
+        arrayProd.forEach((product) => {
+            const content = document.createElement("div");
+            content.innerHTML = `
+            <img src="${product.img}"></img>
+            <h3>${product.title}</h3>
+            <h4>$${product.precio}</h4>
+            <p class="precio"> Stock: ${product.stockDisp}</p>
+            `;
+            tienda.append(content);
+        
+            const buttonCompra = document.createElement ("button");
+            buttonCompra.innerText = 'comprar';
+        
+            content.append(buttonCompra);
+        
+            buttonCompra.addEventListener("click", () => {
+                productos.push({
+                id: product.id,
+                title: product.title,
+                precio: product.precio,
+                stock: product.stock,
+                });
             });
-            console.log(productos);
         });
-    });
+    }
+
+    const btnFiltro = document.getElementById('btnFilter');
+    btnFiltro.addEventListener('click', (e) => filtrar(e));
+
+    function filtrar(){
+
+        const datoFiltro = document.getElementById('inputFilter').value;
+
+        const arrayFiltrado = products.filter((product) => product.title.toLowerCase().includes(datoFiltro.toLowerCase()))
+
+        mostrarProductos(arrayFiltrado)
+
+        console.log(arrayFiltrado)
+    }
+
+    mostrarProductos(products)
+    
 
     const containerEvent = document.getElementById("eventoContainer")
     const mostrarEvento = document.getElementById("evento")
