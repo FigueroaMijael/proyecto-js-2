@@ -60,7 +60,7 @@ const products = [
 
     
 
-    const productos = []
+    const productos = JSON.parse(localStorage.getItem('carrito')) || []
 
     const tienda = document.getElementById ("shopItems");
 
@@ -89,12 +89,13 @@ const products = [
                 precio: product.precio,
                 stock: product.stock,
                 });
+                guardarCarrito()
             });
         });
     }
 
-    const btnFiltro = document.getElementById('btnFilter');
-    btnFiltro.addEventListener('click', (e) => filtrar(e));
+    const filtro = document.getElementById('inputFilter');
+    filtro.addEventListener('keyup', (e) => filtrar(e));
 
     function filtrar(){
 
@@ -143,16 +144,21 @@ const products = [
         productos.forEach((products) => {
             const cuerpo = document.createElement ("div")
             cuerpo.innerHTML = `
-            <div>
-                <div>
+            <div class="edit">
+                <div class="editContent">
+                    <img src="${products.img}" id="img-dos"></img>
+                    <div>
                     <h4>${products.title}</h4>
+                    <p>${products.precio * products.stock }$</p>
+                    </div>
+                    <button class="borrarProduct">✖️</button>
                 </div>
-
-                <div>${products.precio * products.stock }$</div>
             </div>
             `;
             containerEvent.append(cuerpo)
+
         })
+
 
         // CALCULO DE VALOR TOTAL 
         const total = productos.reduce((acc, produc) => acc + produc.precio * produc.stock, 0);
@@ -171,28 +177,15 @@ const products = [
         finalizarCompra.innerText = 'Comprar'
         finalizarCompra.addEventListener ("click", () => {
             alert('Compra realizada');
-            class agradecimiento {
-                constructor(nombre) {
-                    this.nombre = nombre;
-                }
-                agradecer(){
-                    console.log (`Gracias por confiar en nosotros ${nombre} 💪🏽💪🏽`)
-                    alert(`Gracias por confiar en nosotros ${nombre} 💪🏽💪🏽`)
-                }
-            }
-    
-            const agradecimiento1 = new agradecimiento (nombre);
-    
-            agradecimiento1.agradecer()
-
-            alert('si quiere realizar otra compra pulse "F5" y siga los pasos')
-            
-            containerEvent.innerHTML = " "
         })
         containerEvent.append (finalizarCompra)
     }
 
 buttonCarrito.addEventListener("click", dispararEvento)
 
+const guardarCarrito = () => {
+    localStorage.setItem('carrito', JSON.stringify(productos));
+}
 
+JSON.parse(localStorage.getItem('carrito'))
 

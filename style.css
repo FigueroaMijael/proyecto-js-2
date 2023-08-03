@@ -76,18 +76,30 @@ align-items: center;
 
 
 .eventoContainer {
-    display: none;
+    display:none;
     background-color: aliceblue;
-    box-shadow: 8px 3px 6px #00000029;
-    pad: 3rem;
-    position: absolute;
+    box-shadow: 8px 3px 6px #bda0a029;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
     z-index: 1;
-    max-height: 80px;
-    overflow-y: auto;
+    max-height: 500px;
+    overflow-y:scroll;
+}
+
+.edit {
+    margin: 1rem 0;
+}
+
+.editContent {
+    display: flex;
+}
+
+#img-dos {
+    width: 10rem;
+    height: 10rem; ;
 }
 
