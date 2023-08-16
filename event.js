@@ -162,7 +162,7 @@ const products = [
             let cuerpo = document.createElement ("div")
             cuerpo.className = 'carritoCompras'
             cuerpo.innerHTML = `
-            <img src=${product.img} id="img-dos">
+            <img src=./assets/img/${product.img} id="img-dos">
             <h4>${product.title}</h4>
             <p>${product.precio}$</p>
             <span class="restar"> - </span>
