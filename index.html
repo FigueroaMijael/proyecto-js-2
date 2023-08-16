@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>PROGRAMMING</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/main..css">
 </head>
 <body>
-
-    <div class="navB">
-    <h1>TECNOCOM</h1>
-        <input id="inputFilter" type="text" placeholder="🔎">
-        <button id="btnFilter">Buscar</button>
-    <ul class="name">
-        <li><a href="">INICIO</a></li>
-        <li><a href="">NOSOTROS</a></li>
-        <li><a href="">LOGIN</a></li>
-    </ul>
-    </div>
+    <header>
+        <div class="edit">
+            <span class="abrirMenu" id="abrirMenu"><i class="bi bi-list"></i></span>
+            <nav class="navB" id="menuNav">
+                <ul class="navBList">
+                    <span class="cerrarMenu" id="cerrarMenu"><i class="bi bi-x"></i></span>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Contacto</a></li>
+                    <li><a href="">Donde estamos</a></li>
+                    <li><a href="">Preguntas frecuentes</a></li>
+                </ul>
+            </nav>
+            <h1>PROGRAMMING</h1>
+            <input class="buscadorBinamico" id="inputFilter" type="text" placeholder="🔎">
+            <div class="bottonDelCarrito" id="bottonDelCarrito">🛒</div> 
+        </div>
+    </header>
 
     <div class="productsContainer">
         <div class="items" id="shopItems"></div>
     </div>
-
-    <div class="bottonDelCarrito" id="bottonDelCarrito">🛒</div>
 
     <div class="evento" id="evento"></div>
     <div class="eventoContainer" id="eventoContainer"></div>

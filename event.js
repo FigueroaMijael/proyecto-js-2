@@ -1,66 +1,66 @@
 // base de datos
 const products = [
         {
-            id: 0,
+            id: 1,
             img: `./assets/img/PS5.webp` ,
             title: `PS5`,
             precio: 400,
-            stockDisp: 'Stock: 20 Uni' ,
-            stock: 1,
-        },
-        {
-            id: 1,
-            img:  `./assets/img/notebook.jpg`,
-            title: `NotebooK Lenovo`,
-            precio: 200,
-            stockDisp: 'Stock: 23 Uni' ,
+            stockDisp: ' Disponible!!' ,
             stock: 1,
         },
         {
             id: 2,
-            img: `./assets/img/pc-gamer.webp`,
-            title: `PcGamer`,
-            precio: 350,
-            stockDisp: 'Stock: 534 Uni' ,
+            img:  `./assets/img/notebook.jpg`,
+            title: `NotebooK Lenovo`,
+            precio: 200,
+            stockDisp: 'Disponible!!' ,
             stock: 1,
         },
         {
             id: 3,
-            img: `./assets/img/PS4.jpg`,
-            title: `PS4`,
-            precio: 250,
-            stockDisp: 'Stock: 645 Uni' ,
+            img: `./assets/img/pc-gamer.webp`,
+            title: `PcGamer`,
+            precio: 350,
+            stockDisp: ' Disponible!!' ,
             stock: 1,
         },
         {
             id: 4,
-            img: `./assets/img/mouse-pad.jpeg`,
-            title: `MousePad`,
-            precio: 20,
-            stockDisp: 'Stock: 36 Uni' ,
+            img: `./assets/img/PS4.jpg`,
+            title: `PS4`,
+            precio: 250,
+            stockDisp: ' Disponible!!' ,
             stock: 1,
         },
         {
             id: 5,
-            img:  `./assets/img/auriculares-logitech.png`,
-            title: `Auricular Logitec`,
-            precio: 150,
-            stockDisp: 'Stock: 8 Uni' ,
+            img: `./assets/img/mouse-pad.jpeg`,
+            title: `MousePad`,
+            precio: 20,
+            stockDisp: 'Disponible!!' ,
             stock: 1,
         },
         {
             id: 6,
+            img:  `./assets/img/auriculares-logitech.png`,
+            title: `Auricular Logitec`,
+            precio: 150,
+            stockDisp: 'Disponible!!' ,
+            stock: 1,
+        },
+        {
+            id: 7,
             img:  `./assets/img/mouse-aorus.jpg`,
             title: `Mouse Aorus`,
             precio: 100,
-            stockDisp: 'Stock: 43 Uni' ,
+            stockDisp: 'Disponible!!' ,
             stock: 1,
         },
     ]
 
     
 
-    const productos = JSON.parse(localStorage.getItem('carrito')) || []
+    let productos = JSON.parse(localStorage.getItem('carrito')) || []
 
     const tienda = document.getElementById ("shopItems");
 
@@ -83,16 +83,31 @@ const products = [
             content.append(buttonCompra);
         
             buttonCompra.addEventListener("click", () => {
-                productos.push({
-                id: product.id,
-                title: product.title,
-                precio: product.precio,
-                stock: product.stock,
-                });
-                guardarCarrito()
+                const repetir = productos.some((repetirProducto) => repetirProducto.id === product.id)
+                console.log(repetir)
+
+                if (repetir) {
+                    productos.map((prod) => {
+                        if(prod.id ===product.id) {
+                            prod.stock++;
+                        }
+                    })
+                }else {
+                    productos.push({
+                        id: product.id,
+                        img: product.img,
+                        title: product.title,
+                        precio: product.precio,
+                        stock: product.stock,
+                        });  
+                }
+                guardarCarrito()                      
             });
         });
     }
+
+
+
 
     const filtro = document.getElementById('inputFilter');
     filtro.addEventListener('keyup', (e) => filtrar(e));
@@ -109,11 +124,13 @@ const products = [
     }
 
     mostrarProductos(products)
-    
+
+
+
+    // CARRITOOOOOOO
 
     const containerEvent = document.getElementById("eventoContainer")
     const mostrarEvento = document.getElementById("evento")
-    
     const buttonCarrito = document.getElementById("bottonDelCarrito")
 
     const dispararEvento = () => {
@@ -141,22 +158,47 @@ const products = [
 
         containerEvent.append(mostarE)
 
-        productos.forEach((products) => {
-            const cuerpo = document.createElement ("div")
+        productos.forEach((product) => {
+            let cuerpo = document.createElement ("div")
+            cuerpo.className = 'carritoCompras'
             cuerpo.innerHTML = `
-            <div class="edit">
-                <div class="editContent">
-                    <img src="${products.img}" id="img-dos"></img>
-                    <div>
-                    <h4>${products.title}</h4>
-                    <p>${products.precio * products.stock }$</p>
-                    </div>
-                    <button class="borrarProduct">✖️</button>
-                </div>
-            </div>
+            <img src=${product.img} id="img-dos">
+            <h4>${product.title}</h4>
+            <p>${product.precio}$</p>
+            <span class="restar"> - </span>
+            <p>${product.stock}</p>
+            <span class="sumar"> + </span>
+            <p> Total: ${product.stock * product.precio}</p>
+            <span class="eliminar"> ✖️ </span>
             `;
             containerEvent.append(cuerpo)
 
+
+
+            let restar = cuerpo.querySelector(".restar")
+           
+            restar.addEventListener("click", () => {
+                console.log(restar)
+                if(product.stock !== 1) {
+                    product.stock--
+                    dispararEvento()
+                }
+            })
+
+            let sumar = cuerpo.querySelector(".sumar")
+           
+                sumar.addEventListener("click", () => {
+                    console.log(restar)
+                    if(product.stock !== 0) {
+                        product.stock++
+                        dispararEvento()
+                    }
+                })
+                
+                let eliminar = cuerpo.querySelector(".eliminar")
+                eliminar.addEventListener("click", ()=> {
+                    eliminarProducto(product.id)
+                })
         })
 
 
@@ -176,7 +218,21 @@ const products = [
         finalizarCompra.className = 'finalizar'
         finalizarCompra.innerText = 'Comprar'
         finalizarCompra.addEventListener ("click", () => {
-            alert('Compra realizada');
+            if(productos !== productos.id) {
+                Swal.fire(
+                    'Compra realizada!',
+                    'Gracias por confiar en nosotros!',
+                    'success',
+                    'continuar',
+                  )
+            } else {
+                Swal.fire(
+                    'Error!',
+                    'Ocurrio un error',
+                    'error',
+                    'continuar',
+                  )
+            }
         })
         containerEvent.append (finalizarCompra)
     }
@@ -189,3 +245,25 @@ const guardarCarrito = () => {
 
 JSON.parse(localStorage.getItem('carrito'))
 
+
+const eliminarProducto = (id) => {
+    const foundId = productos.find((producto) => producto.id === id)
+
+    productos = productos.filter ((productosId) => {
+        return productosId !== foundId;
+    })
+
+    dispararEvento()
+}
+
+const menu = document.getElementById('menuNav')
+const abrir = document.getElementById('abrirMenu')
+const cerrar = document.getElementById('cerrarMenu')
+
+abrir.addEventListener("click", ()=>{
+    menu.classList.add('navBListVisible')
+})
+
+cerrar.addEventListener("click", ()=>{
+    menu.classList.remove('navBListVisible')
+})

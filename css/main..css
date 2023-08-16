@@ -1,0 +1,204 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navB {
+  display: none;
+}
+
+.navBListVisible {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000000;
+  padding: 2rem;
+}
+.navBListVisible .navBList {
+  width: 100%;
+  height: 100%;
+}
+.navBListVisible .navBList li {
+  margin: 1rem 0;
+}
+.navBListVisible .navBList li a {
+  text-decoration: none;
+  color: white;
+}
+
+.abrirMenu {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #000000;
+}
+
+.cerrarMenu {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+body {
+  background-image: url("../assets/img/971.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+img {
+  width: 15rem;
+  height: 15rem;
+}
+
+.productsContainer {
+  margin: 5rem 2rem;
+}
+
+.items {
+  width: 100%;
+  padding: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.items button {
+  margin: 1rem 0 2rem 0;
+  border: none;
+  padding: 1rem;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 10px;
+}
+
+.bottonDelCarrito {
+  font-size: 2.3rem;
+  position: absolute;
+  left: 190vh;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.bottonDelCarrito:hover {
+  -webkit-transform: scale(1, 1.1);
+          transform: scale(1, 1.1);
+}
+
+.cerrarEvento {
+  cursor: pointer;
+}
+
+.evento {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.011);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.eventoContainer {
+  display: none;
+  background-color: aliceblue;
+  -webkit-box-shadow: 8px 3px 6px rgba(189, 160, 160, 0.1607843137);
+          box-shadow: 8px 3px 6px rgba(189, 160, 160, 0.1607843137);
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 500px;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.buscadorBinamico {
+  padding: 0.7rem;
+  padding-right: 10rem;
+  margin-left: 15rem;
+}
+
+.edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.carritoCompras {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#img-dos {
+  width: 10rem;
+  height: 10rem;
+}
+
+.eliminarProducto {
+  cursor: pointer;
+}
+
+.restar {
+  cursor: pointer;
+}
+
+.sumar {
+  cursor: pointer;
+}

@@ -1,16 +1,19 @@
-* {
+@import "./nav";
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Verdana, Tahoma, sans-serif;
 }
 
-.navB {
-    list-style: none;
-    margin: 0 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+body {
+    background-image: url('../assets/img/971.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 img {
     width: 15rem;
@@ -18,13 +21,13 @@ img {
 }
 
 .productsContainer {
-    margin: 5rem auto;
+    margin: 5rem 2rem;
 }
 
 .items {
     width: 100%;
-    padding: 10rem;
-display: flex;
+    padding: 8rem;
+    display: flex;
 flex-direction: row;
 text-align: center;
 flex-wrap: wrap;
@@ -33,6 +36,7 @@ align-items: center;
 }
 
 .items button {
+    margin: 1rem 0 2rem 0;
     border: none;
     padding: 1rem;
     color: white;
@@ -44,19 +48,15 @@ align-items: center;
 }
 
 .bottonDelCarrito {
-    padding: 1rem;
     font-size: 2.3rem;
-    position: fixed;
-    top: 4rem;
-    left: 78rem;
-    border-radius: 100%;
-    background-color: gray;
+    position: absolute;
+    left: 190vh;
     cursor: pointer;
     transition: 1s;
 }
 
 .bottonDelCarrito:hover{
-    background-color: black;
+    transform: scale(1,1.1);
 }
 
 .cerrarEvento {
@@ -79,27 +79,50 @@ align-items: center;
     display:none;
     background-color: aliceblue;
     box-shadow: 8px 3px 6px #bda0a029;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 700px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 500px;
     width: 100%;
     z-index: 1;
-    max-height: 500px;
+    height: 100%;
     overflow-y:scroll;
 }
 
-.edit {
-    margin: 1rem 0;
+.buscadorBinamico {
+    padding: 0.7rem ;
+    padding-right: 10rem;
+    margin-left: 15rem;
+
+    
 }
 
-.editContent {
+.edit {
     display: flex;
+    flex-direction: row;
+
 }
+.carritoCompras {    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 
 #img-dos {
     width: 10rem;
     height: 10rem; ;
 }
 
+.eliminarProducto {
+    cursor: pointer;
+}
+
+.restar {
+    cursor: pointer;
+}
+
+.sumar {
+    cursor: pointer;
+}
