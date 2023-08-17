@@ -162,7 +162,7 @@ const products = [
             let cuerpo = document.createElement ("div")
             cuerpo.className = 'carritoCompras'
             cuerpo.innerHTML = `
-            <img src=./assets/img/${product.img} id="img-dos">
+            <img src=${product.img} id="img-dos">
             <h4>${product.title}</h4>
             <p>${product.precio}$</p>
             <span class="restar"> - </span>
@@ -217,21 +217,22 @@ const products = [
         const finalizarCompra = document.createElement ("button")
         finalizarCompra.className = 'finalizar'
         finalizarCompra.innerText = 'Comprar'
+        const indetidicar = productos.forEach((produ) => produ.hasOwnProperty)
         finalizarCompra.addEventListener ("click", () => {
-            if(productos !== productos.id) {
+            if(indetidicar){
                 Swal.fire(
                     'Compra realizada!',
                     'Gracias por confiar en nosotros!',
                     'success',
                     'continuar',
                   )
-            } else {
+            }else {
                 Swal.fire(
                     'Error!',
                     'Ocurrio un error',
                     'error',
                     'continuar',
-                  )
+                  )
             }
         })
         containerEvent.append (finalizarCompra)
