@@ -217,8 +217,8 @@ const products = [
         const finalizarCompra = document.createElement ("button")
         finalizarCompra.className = 'finalizar'
         finalizarCompra.innerText = 'Comprar'
-        const indetidicar = productos.forEach((produ) => produ.hasOwnProperty)
         finalizarCompra.addEventListener ("click", () => {
+            const indetidicar = products.forEach((produ) => produ.id.hasOwnProperty)
             if(indetidicar){
                 Swal.fire(
                     'Compra realizada!',
@@ -232,7 +232,7 @@ const products = [
                     'Ocurrio un error',
                     'error',
                     'continuar',
-                  )
+                    )
             }
         })
         containerEvent.append (finalizarCompra)
