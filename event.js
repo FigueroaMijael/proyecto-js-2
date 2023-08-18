@@ -218,8 +218,7 @@ const products = [
         finalizarCompra.className = 'finalizar'
         finalizarCompra.innerText = 'Comprar'
         finalizarCompra.addEventListener ("click", () => {
-            const indetidicar = products.forEach((produ) => produ.id.hasOwnProperty)
-            if(indetidicar){
+            if(productos.length > 0){
                 Swal.fire(
                     'Compra realizada!',
                     'Gracias por confiar en nosotros!',
