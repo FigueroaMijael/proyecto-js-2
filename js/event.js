@@ -4,7 +4,7 @@
     let productos = JSON.parse(localStorage.getItem('carrito')) || []
 
     const getProducts = async () => {
-        const res = awaitfetch("../data.json");
+        const res = await fetch("../data.json");
         const data = await res.json();
 
         function mostrarProductos (data) {
@@ -63,6 +63,4 @@
     }
         mostrarProductos(data)
     }
-
     getProducts()
-    .catch((e) => console.log('Ocurrio un error', e))
