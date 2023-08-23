@@ -1,0 +1,58 @@
+[
+    {   
+        "id": 1,
+        "img": "./assets/img/PS5.webp" ,
+        "title": "PS5",
+        "precio": "400",
+        "stockDisp": "Disponible!!" ,
+        "stock": "1"
+    },
+    { 
+        "id": 2,
+        "img":  "./assets/img/notebook.jpg",
+        "title": "NotebooK Lenovo",
+        "precio": 200,
+        "stockDisp": "Disponible!!" ,
+        "stock": 1
+    },
+    {
+        "id": 3,
+        "img": "./assets/img/pc-gamer.webp",
+        "title": "PcGamer",
+        "precio": 350,
+        "stockDisp": "Disponible!!" ,
+        "stock": 1
+    },
+    {
+        "id": 4,
+        "img": "./assets/img/PS4.jpg",
+        "title": "PS4",
+        "precio": 250,
+        "stockDisp":  "Disponible!!" ,
+        "stock": 1
+    },
+    {
+        "id": 5,
+        "img": "./assets/img/mouse-pad.jpeg",
+        "title": "MousePad",
+        "precio": 20,
+        "stockDisp": "Disponible!!" ,
+        "stock": 1
+    },
+    {
+        "id": 6,
+        "img":  "./assets/img/auriculares-logitech.png",
+        "title": "Auricular Logitec",
+        "precio": 150,
+        "stockDisp": "Disponible!!" ,
+        "stock": 1
+    },
+    {
+        "id": 7,
+        "img":  "./assets/img/mouse-aorus.jpg",
+        "title": "Mouse Aorus",
+        "precio": 100,
+        "stockDisp": "Disponible!!" ,
+        "stock": 1
+    }
+]

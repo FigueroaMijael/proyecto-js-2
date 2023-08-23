@@ -1,0 +1,111 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content {
+    width: 100%;
+    max-width: 450px;
+    background-color: #2C2F35;
+    padding: 4rem 5rem 6rem;
+    text-align: center;
+    border-radius: 5%;
+    h1{
+        font-size: 2rem;
+        margin-bottom: 4rem;
+        color: #FFFFFF;
+        position: relative;
+        &::after{
+            content: " ";
+            width: 2rem;
+            height: 4px;
+            border-radius: 3%;
+            background: #04BD7D;
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform:  translate(-50%);
+        }
+    }
+}
+
+.input-group{
+    height: 230px;
+}
+
+.input-field {
+    background-color: #515966;
+    margin: 1rem 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: 0.8s;
+    overflow: hidden;
+    input {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: none;
+        padding: 1rem 1rem;
+        color: #FFFFFF;
+        &::placeholder {
+            color: #FFFFFF;
+        }
+    }
+    i{
+        margin-left: 1rem;
+        color: #04BD7D;
+    }
+}
+
+form{
+    p{
+        color: #FFFFFF;
+        text-align: left;
+        font-size: 13px;
+        a{
+            color: #04BD7D;
+            margin-left: 5px;
+        }
+    }
+}
+
+.btn-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    button {
+        flex-basis: 48%;
+        font-size: 1rem;
+        background-color: #04BD7D;
+        color: #FFFFFF;
+        height: 3rem;
+        border-radius: 10px;
+        border: 0 ;
+        outline: 0 ;
+        cursor: pointer;
+        transition:  background 1s;
+        .disable {
+            background-color: #EAEAEA;
+            color: #2C2F35;
+        }
+    }
+}
+
+.btn {
+    width: 100%;
+    margin-bottom: 12px;
+    flex-basis: 48%;
+        font-size: 1rem;
+        background-color: #04BD7D;
+        color: #FFFFFF;
+        height: 3rem;
+        border-radius: 10px;
+        border: 0 ;
+        outline: 0 ;
+        cursor: pointer;
+}
+
