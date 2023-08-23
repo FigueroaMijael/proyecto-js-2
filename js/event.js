@@ -7,7 +7,7 @@
         const res = await fetch("./data.json");
         const data = await res.json();
 
-        function mostrarProductos () {
+        function mostrarProductos (data) {
             tienda.innerHTML = ''
     
             data.forEach((product) => {
@@ -61,7 +61,8 @@
 
         console.log(arrayFiltrado)
     }
-        mostrarProductos()
+        mostrarProductos(data)
     }
 
     getProducts()
+    .catch((e) => console.log('Ocurrio un error', e))
