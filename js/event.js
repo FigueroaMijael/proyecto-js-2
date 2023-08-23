@@ -7,7 +7,7 @@
         const res = await fetch("../data.json");
         const data = await res.json();
 
-        function mostrarProductos (data) {
+        function mostrarProductos () {
             tienda.innerHTML = ''
     
             data.forEach((product) => {
@@ -61,6 +61,6 @@
 
         console.log(arrayFiltrado)
     }
-        mostrarProductos(data)
+        mostrarProductos()
     }
     getProducts()
