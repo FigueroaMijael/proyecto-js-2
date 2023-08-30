@@ -1,5 +1,9 @@
     const tienda = document.getElementById ("shopItems");
     const filtro = document.getElementById('inputFilter');
+    const containerEvent = document.getElementById("eventoContainer")
+    const mostrarEvento = document.getElementById("evento")
+    const buttonCarrito = document.getElementById("bottonDelCarrito")
+    const cantidadCarrito = document.getElementById("cantidadCarrito")
 
     let productos = JSON.parse(localStorage.getItem('carrito')) || []
 
@@ -28,6 +32,7 @@
                 buttonCompra.addEventListener("click", () => {
                     const repetir = productos.some((repetirProducto) => repetirProducto.id === product.id)
                     console.log(repetir)
+   
     
                     if (repetir) {
                         productos.map((prod) => {
@@ -44,7 +49,8 @@
                             stock: product.stock,
                             });  
                     }
-                    guardarCarrito()                      
+                    carritoCounter()
+                    saveLocal()                           
                 });
             });
         }
@@ -66,3 +72,11 @@
 
     getProducts()
     .catch((e) => console.log('Ocurrio un error', e))
+
+    const saveLocal = () => {
+        localStorage.setItem('carrito', JSON.stringify(productos));
+    }
+    
+    JSON.parse(localStorage.getItem('carrito'))
+    
+

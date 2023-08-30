@@ -6,7 +6,7 @@ const title = document.getElementById('title')
 signUp.addEventListener("click", () => {
     nameInput.style.maxHeight = "0";
     title.innerHTML = "Login";
-    signUp.classList.add("disable")
+    signUp.classList.add("disablee")
     signIn.classList.remove("disable")
     value.innerHTML = "Iniciar Session"
 })
@@ -14,7 +14,7 @@ signUp.addEventListener("click", () => {
 signIn.addEventListener("click", () => {
     nameInput.style.maxHeight = "60px";
     title.innerHTML = "Registro";
-    signUp.classList.remove("disable")
+    signUp.classList.remove("disablee")
     signIn.classList.add("disable")
     value.innerHTML = "registrarme"
 })
